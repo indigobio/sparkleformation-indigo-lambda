@@ -2,7 +2,7 @@
 
 echo "Searching buckets"
 for bucket in $(aws s3api list-buckets --query 'Buckets[?contains(Name, '\`$environment\`')].Name' --output text); do
-  if [ ! -z "$(aws s3api get-bucket-tagging --bucket $bucket --query 'TagSet[?Key == `Purpose`]|[?Value == `lambda`]' --output text 2> null)" ]; then
+  if [ ! -z "$(aws s3api get-bucket-tagging --bucket $bucket --query 'TagSet[?Key == `Purpose`]|[?Value == `lambda`]' --output text 2> /dev/null)" ]; then
     echo "Copying functions to $bucket"
     cd functions
     for function in *; do
