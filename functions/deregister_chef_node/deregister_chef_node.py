@@ -26,6 +26,8 @@ def lambda_handler(event, context):
         except:
           raise Exception('Could not search for nodes with ec2_instance_id: ' + instance_id)
 
+        print("nodes found:    " + str(len(rows)))
+
         for row in rows:
           try:
             n = chef.Node(row['name'])
