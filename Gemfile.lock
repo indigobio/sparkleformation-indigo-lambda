@@ -13,6 +13,13 @@ GIT
       aws-sdk-core (~> 2)
 
 GIT
+  remote: https://github.com/gswallow/sparkle-pack-aws-my-sns-topics.git
+  revision: b6ea70a89946a4948df938c9e79495aa9303cbd6
+  specs:
+    sparkle-pack-aws-my-sns-topics (0.0.1)
+      aws-sdk-core (~> 2)
+
+GIT
   remote: https://github.com/gswallow/sparkle-pack-aws-my-subnets.git
   revision: 1fac129a8e870765bd706b801ed808d5a0a5c539
   specs:
@@ -26,14 +33,14 @@ GEM
       public_suffix (~> 2.0, >= 2.0.2)
     attribute_struct (0.3.4)
       bogo (>= 0.1.31, < 0.3.0)
-    aws-sdk-core (2.6.43)
+    aws-sdk-core (2.7.3)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
     aws-sigv4 (1.0.0)
-    bogo (0.2.4)
+    bogo (0.2.8)
       hashie
       multi_json
-    bogo-cli (0.2.10)
+    bogo-cli (0.2.12)
       bogo (>= 0.1.6, < 0.6)
       bogo-config (>= 0.1.15, < 0.5)
       bogo-ui
@@ -43,7 +50,7 @@ GEM
       bogo (>= 0.1.4, < 1.0)
       multi_json
       multi_xml
-    bogo-ui (0.1.20)
+    bogo-ui (0.1.22)
       bogo
       command_line_reporter
       paint
@@ -54,7 +61,7 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     graph (2.8.2)
     hashdiff (0.2.3)
-    hashie (3.4.6)
+    hashie (3.5.1)
     http (1.0.4)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -85,9 +92,9 @@ GEM
     mime-types-data (3.2016.0521)
     multi_json (1.12.1)
     multi_xml (0.6.0)
-    net-ssh (4.0.0)
+    net-ssh (4.0.1)
     paint (2.0.0)
-    public_suffix (2.0.4)
+    public_suffix (2.0.5)
     sfn (3.0.20)
       bogo-cli (>= 0.2.5, < 0.4)
       bogo-ui (>= 0.1.20, < 0.4)
@@ -119,6 +126,7 @@ DEPENDENCIES
   sfn
   sparkle-pack-aws-my-s3-buckets!
   sparkle-pack-aws-my-security-groups!
+  sparkle-pack-aws-my-sns-topics!
   sparkle-pack-aws-my-subnets!
 
 BUNDLED WITH

@@ -7,6 +7,7 @@ Configuration.new do
   sparkle_pack [
     'sparkle-pack-aws-my-s3-buckets',
     'sparkle-pack-aws-my-subnets',
+    'sparkle-pack-aws-my-sns-topics',
     'sparkle-pack-aws-my-security-groups'
   ]
   #   Set style of stack nesting
