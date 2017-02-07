@@ -12,7 +12,8 @@ EOF
   dynamic!(:dummy_log_group, 'RdsCreateRole')
 
   dynamic!(:sns_topic, "#{ENV['org']}_#{ENV['environment']}_rds_create_role",
-           :subscriber => 'RdsCreateRoleLambdaFunction'
+           :subscriber => 'RdsCreateRoleLambdaFunction',
+           :topic => 'lambda'
           )
 
   dynamic!(:permission, 'RdsCreateRole',

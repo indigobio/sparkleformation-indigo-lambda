@@ -12,7 +12,8 @@ EOF
   dynamic!(:dummy_log_group, 'DeregisterECSInstance')
 
   dynamic!(:sns_topic, "#{ENV['org']}_#{ENV['environment']}_deregister_e_c_s_instance",
-           :subscriber => 'DeregisterECSInstanceLambdaFunction'
+           :subscriber => 'DeregisterECSInstanceLambdaFunction',
+           :protocol => 'lambda'
           )
 
   dynamic!(:permission, 'DeregisterECSInstace',

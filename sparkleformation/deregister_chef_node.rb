@@ -10,7 +10,8 @@ EOF
   dynamic!(:dummy_log_group, 'DeregisterChefNode')
 
   dynamic!(:sns_topic,  "#{ENV['org']}_#{ENV['environment']}_deregister_chef_node",
-           :subscriber => 'DeregisterChefNodeLambdaFunction'
+           :subscriber => 'DeregisterChefNodeLambdaFunction',
+           :protocol => 'lambda'
           )
 
   dynamic!(:permission, 'DeregisterChefNode',
