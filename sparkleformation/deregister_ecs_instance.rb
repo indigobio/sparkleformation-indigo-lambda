@@ -1,4 +1,4 @@
-SparkleFormation.new(:deregister_ecs_instance).load(:base).overrides do
+SparkleFormation.new(:deregister_ecs_instance).load(:base, :git_rev_outputs).overrides do
   description <<EOF
 Creates an AWS Lambda that deregisters ECS instances upon instance termination in an auto-scaling group
 EOF

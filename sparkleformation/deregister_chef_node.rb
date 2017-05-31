@@ -1,4 +1,4 @@
-SparkleFormation.new(:deregister_chef_node).load(:base).overrides do
+SparkleFormation.new(:deregister_chef_node).load(:base, :git_rev_outputs).overrides do
   description <<EOF
 Creates an AWS Lambda that deregisters Chef nodes upon instance termination in an auto-scaling group.
 EOF

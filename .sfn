@@ -8,7 +8,8 @@ Configuration.new do
     'sparkle-pack-aws-my-s3-buckets',
     'sparkle-pack-aws-my-subnets',
     'sparkle-pack-aws-my-sns-topics',
-    'sparkle-pack-aws-my-security-groups'
+    'sparkle-pack-aws-my-security-groups',
+    'sparkle-pack-git-rev-outputs'
   ]
   #   Set style of stack nesting
   apply_nesting 'deep'

@@ -1,4 +1,4 @@
-SparkleFormation.new(:rds_create_role).load(:base).overrides do
+SparkleFormation.new(:rds_create_role).load(:base, :git_rev_outputs).overrides do
   description <<EOF
 Creates an AWS Lambda that creates non-privileged roles in newly-created RDS instances
 EOF
