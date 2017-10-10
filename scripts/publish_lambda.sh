@@ -4,7 +4,7 @@ echo "Searching buckets"
 for bucket in $(aws s3api list-buckets --query 'Buckets[?contains(Name, '\`$environment\`')].Name' --output text); do
   if [ ! -z "$(aws s3api get-bucket-tagging --bucket $bucket --query 'TagSet[?Key == `Purpose`]|[?Value == `lambda`]' --output text 2> /dev/null)" ]; then
     echo "Copying functions to $bucket"
-    cd functions
+    cd `dirname $0`/../functions
     for function in *; do
       echo "Building deployment package for $function"
       cd $function && ./create_deployment_package.sh && cd ..
