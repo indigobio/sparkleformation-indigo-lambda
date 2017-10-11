@@ -111,12 +111,12 @@ done
 echo
 
 echo "Logging in."
-echo 'yes' | scp -o StrictHostKeyChecking=no -q -i ${stamp}-rsa remote.sh ec2-user@${myip}: && \
-scp -q -i ${stamp}-rsa $knife_rb ec2-user@${myip}:lambda.rb && \
-scp -q -i ${stamp}-rsa $chef_key ec2-user@${myip}:lambda.pem && \
-ssh -t -i ${stamp}-rsa ec2-user@${myip} chmod 755 remote.sh && \
-ssh -t -i ${stamp}-rsa ec2-user@${myip} ./remote.sh && \
-scp -i ${stamp}-rsa ec2-user@${myip}:deregister_chef_node.zip . && \
+echo 'yes' | scp -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -q -i ${stamp}-rsa remote.sh ec2-user@${myip}: && \
+scp -q -o IdentitiesOnly=yes -i ${stamp}-rsa $knife_rb ec2-user@${myip}:lambda.rb && \
+scp -q -o IdentitiesOnly=yes -i ${stamp}-rsa $chef_key ec2-user@${myip}:lambda.pem && \
+ssh -t -o IdentitiesOnly=yes -i ${stamp}-rsa ec2-user@${myip} chmod 755 remote.sh && \
+ssh -t -o IdentitiesOnly=yes -i ${stamp}-rsa ec2-user@${myip} ./remote.sh && \
+scp -o IdentitiesOnly=yes -i ${stamp}-rsa ec2-user@${myip}:deregister_chef_node.zip . && \
 zip -u deregister_chef_node.zip deregister_chef_node.py
 
 cleanup $things
