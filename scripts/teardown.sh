@@ -30,10 +30,15 @@ del_stack () {
 }
 
 # Tear down the stacks
-for stack in $(aws cloudformation list-stacks \
+stacks=$(aws cloudformation list-stacks \
  --stack-status-filter CREATE_COMPLETE UPDATE_COMPLETE DELETE_FAILED \
  --query 'StackSummaries[?contains(StackName, `'${org}'-'${environment}'-lambda`) == `true`].StackId' \
- --output text); do
+ --output text)
 
-  del_stack $stack
-done
+if [ -n "$stacks" ]; then
+  for stack in $stacks; do
+    del_stack $stack
+  done
+else
+  echo "No stack found."
+fi
